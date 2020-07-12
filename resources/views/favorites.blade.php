@@ -63,9 +63,9 @@
                                     <div class="productDescription text-default text-left">
                                         <p  onclick="readMore(this)">
                                             {{ \Illuminate\Support\Str::limit($products[$i]->description , 150, '') }}
-                                            @if (strlen($products[$i]->description) > 100)
+                                            @if (strlen($products[$i]->description) > 150)
                                                 <span class="dots">...</span>
-                                                <span class="more">{{ substr($products[$i]->description, 100) }}</span>
+                                                <span class="more">{{ substr($products[$i]->description, 150) }}</span>
                                                 <span class="button"> Więcej </span>
                                             @endif
                                         </p>
