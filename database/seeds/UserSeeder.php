@@ -20,8 +20,9 @@ class UserSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'Admin',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('qwerty123'),
+            'email' => 'admin@admin.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('Admin12!@'),
             "created_at" =>  \Carbon\Carbon::now(),
             "updated_at" => \Carbon\Carbon::now()
         ]);
@@ -31,7 +32,7 @@ class UserSeeder extends Seeder
                 'name' => $faker->name,
                 'email' => $faker->unique()->safeEmail,
                 'email_verified_at' => now(),
-                'password' => Hash::make('qwerty123'),
+                'password' => Hash::make('User12!@'),
                 "created_at" =>  \Carbon\Carbon::now(),
                 "updated_at" => \Carbon\Carbon::now()
             ]);
