@@ -1,0 +1,173 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.color-default{
+    background-color: $background;
+}
+
+.mainContainer{
+    background-color: $background;
+    max-width: 1920px;
+
+    .insideBox{
+        background-color: $insideBoxBackground;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        border-radius: 10px;
+
+        .headerText{
+            @include font(20px);
+            padding-top: 12%;
+            padding-bottom: 5%;
+        }
+
+        .loginForm{
+            @include font(14px);
+
+            input{
+                color: $text;
+                height: 3.5em;
+
+                &.status-on{
+                    border-right: 0;
+                }
+            }
+
+            #loginButton{
+                background-color: $button;
+                width: 100%;
+                color: #fff;
+                height: 3.5em;
+                margin-top: 0.5rem;
+            }
+
+            .form-group {
+                margin-bottom: 0.5rem;
+            }
+
+            #emailStatus, #passwordStatus{
+                display: none;
+                background: #fff;
+                color: #51CF66;
+                border: $border solid 2px;
+                border-left: 0;
+            }
+
+            .form-control:focus{
+                box-shadow: 0 0 0 0 rgba(255, 255, 255,0);
+                border-left: $border solid 2px;
+                border-bottom: $border solid 2px;
+                border-top: $border solid 2px;
+            }
+        }
+        #logo{
+            padding-bottom: 10%;
+            .logo{
+                margin-top: 60px;
+                width: 75px;
+            }
+        }
+    }
+}
+
+.text-default{
+    @include font(14px);
+}
+
+.border-default{
+    border: $border solid 2px;
+}
+
+.navbar{
+    margin-bottom: 30px;
+}
+
+#home{
+
+    max-width: 1920px;
+    .headerText {
+        @include font(30px);
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .pagination{
+        a.page-link{
+            border: none;
+            padding: 0.5rem 0.15rem;
+        }
+    }
+
+    .productCard{
+        border: 1px solid $border;
+        border-radius: 5px;
+        margin: 1%;
+
+        .productName{
+            @include font(20px);
+            margin-bottom: 2em;
+        }
+
+        .productImage{
+            text-align: center;
+            max-height: 200px;
+            margin: 10px;
+        }
+        i{
+            color: $star;
+        }
+        .favorite > i{
+            color: #fce300;
+
+            i{
+                padding: 20px 0;
+            }
+        }
+
+        .more {
+            display:  none;
+        }
+
+        .button{
+            font-weight: bold;
+            color: $button;
+            cursor: pointer;
+        }
+    }
+
+    .pagination{
+        margin: 5%;
+    }
+
+    #logo{
+        padding-bottom: 10%;
+        .logo{
+            width: 75px;
+        }
+    }
+
+    .mailForm{
+        margin: 10px;
+
+        form input{
+            margin-left: 10px;
+
+            &.btn{
+                background-color: $button;
+                color: #FFF;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .productCard{
+        max-width: 30%;
+    }
+}

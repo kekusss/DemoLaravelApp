@@ -1,0 +1,46 @@
+// Body
+$body-bg: #fff;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66d9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+
+// Template colors
+$text: #2699FB;
+$button: #0075D8;
+$background: #F1F9FF;
+$border: #BCE0FD;
+$insideBoxBackground: #FFF;
+$star: #2699FB;
+
+@mixin font ($size){
+    font-family: Arial;
+    font-size: $size;
+    color: $text;
+    letter-spacing: 0;
+    text-align: center;
+    @if $size == 20px{
+        line-height: 23px;
+        font-weight: bold;
+    }
+    @else if $size == 30px{
+        line-height: 34px;
+        font-weight: bold;
+    }
+    @else {
+        line-height: 16px;
+    }
+}
