@@ -28,7 +28,7 @@ class Parser extends Controller
         $product->id = $jsonArray[0]['id'];
         $product->name = $jsonArray[0]['name'];
         $product->description = $jsonArray[0]['description'];
-        $product->image_url = $jsonArray[0]['image_url'];
+        $product->image_url = ($jsonArray[0]['image_url'] == Null) ? "/images/defaultImg.png" : $jsonArray[0]['image_url'];
         $product->ingredients = self::getIngredients($jsonArray[0]['ingredients']);
 
         return $product;
@@ -61,7 +61,7 @@ class Parser extends Controller
             $product->id = $item['id'];
             $product->name = $item['name'];
             $product->description = $item['description'];
-            $product->image_url = $item['image_url'];
+            $product->image_url = ($item['image_url'] == Null) ? "/images/defaultImg.png" : $item['image_url'];
             $product->isFavorite = in_array($product->id, $favoriteProductsIds);
             $product->ingredients = self::getIngredients($item['ingredients']);
 

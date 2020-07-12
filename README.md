@@ -38,7 +38,7 @@ Strona jest już dostępna pod adresem http://localhost:8000
     php artisan key:generate
 
 
-## Database seeding
+## Generowanie przykładowych danych
 
 **Możesz uzupełnić bazę danych losowymi użytkownikami i danymi za pomocą seederów**
 
