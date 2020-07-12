@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Favorites extends Model
+class Favorite extends Model
 {
     //
 }

@@ -7,8 +7,12 @@
 @section('content')
     <div class="container" id="home">
         <div class="row justify-content-center">
+
             @isset($products[0])
+
             <div class="col-md-8">
+
+
                 @if(session()->has('message'))
                     <div class="alert alert-success">
                         {{ session()->get('message') }}
@@ -72,6 +76,7 @@
                                         <ul>
 
                                             <?php $j=0; ?>
+
                                             @foreach($products[$i]->ingredients as $ingredient)
                                                 <?php
                                                 if($j<5){
@@ -83,9 +88,11 @@
                                                 $j++;
                                                 ?>
                                             @endforeach
+
                                             @if(count($products[$i]->ingredients) > 5)
                                                 <span class="button" onclick="getMoreIngredients(this)"> Więcej </span>
                                             @endif
+
                                         </ul>
                                     </div>
 
@@ -117,6 +124,7 @@
                 </ul>
             </nav>
 
+
             @else
                     <div class="col-md-12">
                         <div class="col-md-8 offset-2 alert alert-danger">
@@ -124,7 +132,6 @@
                         </div>
                     </div>
             @endisset
-
 
 
             <div class="text-center" id="logo">

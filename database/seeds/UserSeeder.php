@@ -10,6 +10,8 @@ class UserSeeder extends Seeder
     /**
      * Run the database seeds.
      *
+     * Generate one Admin user and five random Users
+     *
      * @return void
      */
     public function run()
@@ -17,17 +19,21 @@ class UserSeeder extends Seeder
         $faker = Faker::create();
 
         DB::table('users')->insert([
-            'name' => 'admin',
-            'email' => 'kewwin5@gmail.com',
-            'password' => Hash::make('qwerty123')
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('qwerty123'),
+            "created_at" =>  \Carbon\Carbon::now(),
+            "updated_at" => \Carbon\Carbon::now()
         ]);
 
-        for($i=0; $i<3; $i++){
+        for($i=0; $i<5; $i++){
             DB::table('users')->insert([
                 'name' => $faker->name,
                 'email' => $faker->unique()->safeEmail,
                 'email_verified_at' => now(),
-                'password' => Hash::make('qwerty123')
+                'password' => Hash::make('qwerty123'),
+                "created_at" =>  \Carbon\Carbon::now(),
+                "updated_at" => \Carbon\Carbon::now()
             ]);
         }
 

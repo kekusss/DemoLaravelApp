@@ -29,6 +29,10 @@
     </div>
 </body>
 <script>
+
+    /*
+        is responsible for developing and collapsing the product description
+     */
     function readMore(param) {
         var moreText = param.getElementsByClassName('more')[0];
         var dots = param.getElementsByClassName('dots')[0];
@@ -45,6 +49,9 @@
         }
     }
 
+    /*
+        is responsible for developing and collapsing the list of ingredients
+    */
     function getMoreIngredients(param) {
         var moreItems = param.parentElement.getElementsByClassName('more');
         var btnText = param;
@@ -62,10 +69,12 @@
         }
     }
 
+    /*
+        validates the email
+    */
     function validateEmail(){
         var emailInput = document.getElementById('email');
         var emailStatus = document.getElementById('emailStatus');
-        var isEmailValid = true;
 
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$/;
 
@@ -75,19 +84,26 @@
         if(emailInput.value.match(mailformat)){
             emailStatus.innerHTML = "<i class=\"fa fa-check\"></i>";
             emailStatus.style.color = "#51CF66";
+
             return true;
         }
         else{
             emailStatus.innerHTML = "<i class=\"fa fa-times\"></i>";
             emailStatus.style.color = "#FB2E2E";
+
             return false;
         }
     }
 
+    /*
+        Password validation must contain 8 characters, including at least:
+        - 1 uppercase and 1 lowercase
+        - special character
+        - number
+    */
     function validatePassword(){
         var passwordInput = document.getElementById('password');
         var passwordStatus = document.getElementById('passwordStatus');
-        var isPasswordValid = true;
 
         var passwordFormat = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
@@ -97,20 +113,27 @@
         if(passwordInput.value.match(passwordFormat)){
             passwordStatus.innerHTML = "<i class=\"fa fa-check\"></i>";
             passwordStatus.style.color = "#51CF66";
+
             return true;
         }
         else{
             passwordStatus.innerHTML = "<i class=\"fa fa-times\"></i>";
             passwordStatus.style.color = "#FB2E2E";
+
             return false;
         }
     }
 
+    /*
+        checks if the email and password are correct
+    */
     function validateRegisterForm(){
         var status = validateEmail() && validatePassword();
+
         if(! status){
             alert('Nieprawdiłowe dane w formularzu');
         }
+
         return status;
     }
 

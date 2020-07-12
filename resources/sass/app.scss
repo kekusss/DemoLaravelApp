@@ -89,8 +89,8 @@
 }
 
 #home{
-
     max-width: 1920px;
+
     .headerText {
         @include font(30px);
         padding-top: 5%;
@@ -119,9 +119,11 @@
             max-height: 200px;
             margin: 10px;
         }
+
         i{
             color: $star;
         }
+
         .favorite > i{
             color: #fce300;
 

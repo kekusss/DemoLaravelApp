@@ -8,11 +8,13 @@
 <div class="container" id="home">
     <div class="row justify-content-center">
         <div class="col-md-8">
+
             @if(session()->has('message'))
                 <div class="alert alert-success">
                     {{ session()->get('message') }}
                 </div>
             @endif
+
             @if (session('status'))
                 <div class="alert alert-success" role="alert">
                     {{ session('status') }}
@@ -73,8 +75,8 @@
 
                         <div class="productIngredients text-default text-left">
                             <ul>
-
                                 <?php $i=0; ?>
+
                                 @foreach($product->ingredients as $ingredient)
                                     <?php
                                         if($i<5){
@@ -86,6 +88,7 @@
                                         $i++;
                                     ?>
                                 @endforeach
+
                                 @if(count($product->ingredients) > 5)
                                     <span class="button" onclick="getMoreIngredients(this)"> Więcej </span>
                                 @endif
@@ -119,9 +122,12 @@
                 </ul>
             </nav>
 
+
             <div class="text-center" id="logo">
                 <img class="logo" src="{{ asset('images/logo.png') }}" alt="Grupa Visit Logo"/>
             </div>
+
+
         </div>
     </div>
 </div>

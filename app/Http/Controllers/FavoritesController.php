@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Favorite;
 use App\Mail\FavoritesMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -37,7 +38,9 @@ class FavoritesController extends Controller
         $currentUserMail = $currentUserMail[0]->email;
 
         $products = $this->getProductsList();
+
         $nextPage = count($products) - $page*5 > 0;
+
         return view('favorites', ['products' => $products, 'page'=> $page, 'hasNextPage' => $nextPage, 'currentUserEmail' => $currentUserMail] );
     }
 

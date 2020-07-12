@@ -26,6 +26,7 @@ $border: #BCE0FD;
 $insideBoxBackground: #FFF;
 $star: #2699FB;
 
+// mixin for fonts used in template
 @mixin font ($size){
     font-family: Arial;
     font-size: $size;

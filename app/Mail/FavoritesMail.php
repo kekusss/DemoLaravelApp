@@ -14,9 +14,9 @@ class FavoritesMail extends Mailable
     /**
      * Array with Favorites Products ID's and Name's
      *
-     * @var $favorites
+     * @var array $favorites
      */
-    public $favorites;
+    public array $favorites;
 
     /**
      * Create a new message instance.

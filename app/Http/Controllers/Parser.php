@@ -14,12 +14,13 @@ use Illuminate\Support\Facades\DB;
 class Parser extends Controller
 {
     /**
-     * retrieves and parses data retrieved from the API on the object
+     * Retrieves and parses data retrieved from the API on the object
      *
      * @param $endpoint
      * @return Product
      */
-    public static function parseToProductObject($endpoint){
+    public static function parseToProductObject($endpoint)
+    {
         $jsonArray = json_decode(file_get_contents($endpoint), true);
 
         $product = new Product();
@@ -39,7 +40,8 @@ class Parser extends Controller
      * @param $endpoint
      * @return array
      */
-    public static function parseToProductsObjectsArray($endpoint){
+    public static function parseToProductsObjectsArray($endpoint)
+    {
         $jsonArray = json_decode(file_get_contents($endpoint), true);
 
         $currentUserId = Auth::user()->getAuthIdentifier();
@@ -52,7 +54,8 @@ class Parser extends Controller
 
         $products = [];
 
-        foreach ($jsonArray as $item){
+        foreach ($jsonArray as $item)
+        {
             $product = new Product();
 
             $product->id = $item['id'];
